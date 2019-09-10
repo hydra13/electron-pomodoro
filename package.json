@@ -1,0 +1,32 @@
+{
+  "name": "electron-pomodoro",
+  "version": "0.1.0",
+  "description": "Electron Pomodoro Timer App",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hydra13/electron-pomodoro.git"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron . --production",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "hydra13",
+  "license": "MIT",
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron-builder": "^20.44.4",
+    "standard": "^12.0.1",
+    "electron": "^3.0.4"
+  },
+  "dependencies": {
+    "electron-reload": "^1.2.5",
+    "electron-store": "^2.0.0",
+    "spectre.css": "^0.5.3"
+  },
+  "build": {
+    "appId": "hydra13.pomodoro.app"
+  }
+}
