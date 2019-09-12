@@ -30,6 +30,7 @@ function showMessage() {
 function process() {
   currentValue--;
   const percent = (currentValue * 100) / startValue;
+  console.log(`tick: ${currentValue} secs (${percent} %)`)
   progress.style.cssText = `width:${percent}%;`;
   if (currentValue <= 0) {
     stopTimer();
@@ -40,7 +41,8 @@ function process() {
 function startTimer() {
   btnStart.disabled = true;
   btnStop.disabled = false;
-  startValue = (mins.value * 60) + secs.value;
+  startValue = (+mins.value * 60) + +secs.value;
+  console.log(`init secs: ${startValue}`);
   currentValue = startValue;
   progress.style.cssText = `width:100%;`;
   timerPomodoro = setInterval(process, 1000);
