@@ -39,7 +39,7 @@ function showMessage() {
     const dayStr = normalizeDigit(date.getDate());
     const mouthStr = normalizeDigit(date.getMonth() + 1);
     const dateToday = `${date.getFullYear()}.${mouthStr}.${dayStr}`
-    fs.writeFile(dateToday, `${totalPomodoro}`);
+    fs.writeFileSync(dateToday, `${totalPomodoro}`);
   }
 
   let audio = new Audio(path.resolve(__dirname, "..", "sounds", "the_purge.mp3"));
@@ -99,7 +99,7 @@ document.addEventListener('click', event => {
   } else if (event.target === btnStop) {
     stopTimer();
   } else if (event.target === btnWork25) {
-    startExactTime(25, 0, true);
+    startExactTime(0, 5, true);
   } else if (event.target === btnRest15) {
     startExactTime(15);
   } else if (event.target === btnRest5) {
